@@ -18,7 +18,7 @@ function Home() {
 
   return (
     <Container>
-      <div>
+      <div >
         <h1>Welcome to Rick and Morty App </h1>
         <div>
           <img src={Banner} alt="banner" />

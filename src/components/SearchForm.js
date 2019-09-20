@@ -6,7 +6,7 @@ export default function SearchForm({ onSearch }) {
   // STRETCH TODO: Add stateful logic for query/form data
 
   const [name, setName] = useState("");
-  const handleInputChange = e => setName(e.target.value);
+  const handleInputChange = e => {console.log(e.target.value);setName(e.target.value)};
 
   const SearchContainer = styled.section`
 
@@ -23,21 +23,21 @@ export default function SearchForm({ onSearch }) {
 
   return (
     <SearchContainer className="search-form">
-      <form onSubmit={() => onSearch(name)}>
-        {/*<input
+      <form onSubmit={(e) =>{ e.preventDefault(); onSearch(name)}}>
+        <input
           onChange={handleInputChange}
           placeholder="name"
           value={name}
           name="name"
-        />*/}
-        <Input
-          loading
+        />
+        {/*<Input
+          loading={false}
           icon="user"
           placeholder="Name..."
           onChange={handleInputChange}
           value={name}
           name="name"
-        />
+        />*/}
 
         <Button type="submit">Search</Button>
       </form>
